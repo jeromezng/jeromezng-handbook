@@ -26,6 +26,9 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 
+# Styling
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+
 # Authentication
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
