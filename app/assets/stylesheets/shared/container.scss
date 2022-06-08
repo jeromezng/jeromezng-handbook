@@ -1,0 +1,162 @@
+@import "mixins.scss";
+
+body {
+  background-color: $whitesmoke;
+}
+
+.wrapper-wide {
+  width: 90%;
+  margin: auto;
+}
+
+.wrapper {
+  width: 80%;
+  margin: auto;
+}
+
+.wrapper-medium {
+  width: 65%;
+  margin: auto;
+}
+
+.wrapper-narrow {
+  width: 50%;
+  margin: auto;
+}
+
+.wrapper-large {
+  max-width: 1000px;
+  width: 90%;
+  margin: auto;
+}
+
+.wrapper-xlarge {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.container-min-height {
+  min-height: 1000px;
+}
+
+.container-wide-no-padding {
+  max-width: 1000px;
+  background: $white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.08);
+  padding: 0px;
+  margin: 25px auto 25px auto;
+}
+
+.container-wide {
+  max-width: 1000px;
+  background: $white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.08);
+  padding: 15px;
+  margin: 25px auto 25px auto;
+}
+
+.container-wide-no-background {
+  min-height: 1000px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.container-wide-no-background-no-height {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0px;
+}
+
+.container-large {
+  min-height: 1000px;
+  max-width: 1000px;
+  margin: 3rem auto;
+  background: $white;
+  border: 1px solid $lightborder;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.container-large-flex {
+  max-width: 1000px;
+  margin: 3rem auto;
+  background: $white;
+  border: 1px solid $lightborder;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.container-large-no-background {
+  min-height: 1000px;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 20px;
+}
+
+.container-large-no-background-no-height {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0px;
+}
+
+.container-medium {
+  max-width: 600px;
+  background: $white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.08);
+  padding: 15px;
+  margin: 5px auto 25px auto;
+}
+
+.container-medium-no-background {
+  max-width: 600px;
+  padding: 0 20px;
+  margin: 2rem auto;
+}
+
+.container-medium-no-background-no-height {
+  max-width: 600px;
+  margin: auto;
+  padding: 0px;
+}
+
+.container-narrow {
+  background: $white;
+  border: 1px solid $lightborder;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 350px;
+  padding: 20px;
+  margin: 5rem auto;
+}
+
+@media screen and (max-width: $l-breakpoint-max) {
+  .container-wide-no-padding {
+    padding: 0;
+    margin: 5px 15px 25px 15px;
+  }
+  .container-wide {
+    padding: 10px;
+    margin: 0;
+  }
+  .container-wide-no-background-no-height {
+    padding: 0;
+    margin: 0px;
+  }
+  .container-large-no-background-no-height {
+    padding: 0;
+    margin: 15px;
+  }
+  .container-medium-no-background-no-height {
+    padding: 0;
+    margin: 15px;
+  }
+  .wrapper-medium {
+    width: 80%;
+    margin: auto;
+  }
+  .container-medium {
+    margin: 15px;
+  }
+}
