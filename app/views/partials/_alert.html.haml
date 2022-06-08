@@ -1,0 +1,32 @@
+- if notice
+  .alerts-notices
+    .alert.alert-info.alert-dismissible.fade.in{:role => "alert"}
+      %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+        %span{"aria-hidden" => "true"} ×
+      %p
+        = notice
+
+  :javascript
+    window.setTimeout(function() {
+        $(".alert-info").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+    }, 5000);
+
+- if alert
+  .alerts-notices
+    .alert.alert-danger.alert-dismissible.fade.in{:role => "alert"}
+      %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+        %span{"aria-hidden" => "true"} ×
+      %p
+        = alert
+- if params[:controller] == 'registrations' || params[:controller] == 'sessions' || params[:controller] == 'passwords' || params[:controller] == 'confirmations' 
+  - if resource.errors.any?
+    .alerts-notices
+      .alert.alert-danger.alert-dismissible.fade.in{:role => "alert"}
+        %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %p
+          - resource.errors.full_messages.each do |message|
+            = message
+            %br

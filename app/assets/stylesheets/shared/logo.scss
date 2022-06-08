@@ -1,0 +1,63 @@
+@import "mixins.scss";
+
+.avatar-image {
+  .responsive {
+    img {
+      border-radius: 10px;
+      object-fit: cover;
+      width: 80px;
+      height: 80px;
+    }
+  }
+  input[type="file"] {
+    width: 200px;
+    margin: 0 auto;
+  }
+  display: inline-block;
+}
+
+.avatar-image.large {
+  img {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.avatar-image.medium {
+  img {
+    border-radius: 8px;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.avatar-image.small {
+  img {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.avatar-image.xsmall {
+  img {
+    border-radius: 3px;
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-max) {
+  .avatar-image.medium {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
