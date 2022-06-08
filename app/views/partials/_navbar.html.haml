@@ -1,0 +1,21 @@
+%nav.navbar.navbar-default.primary
+  .desktop-nav.container-wide-no-background-no-height
+    %p.navbar-text
+      = link_to root_path do
+        jeromezng.com
+    %p.navbar-icons
+      = link_to "https://instagram.com/jeromezng" do
+        %i.fa.fa-instagram
+    %p.navbar-icons
+      = link_to "https://twitter.com/jeromezng" do
+        %i.fa.fa-twitter
+    %p.navbar-icons
+      = link_to "https://gitlab.com/jeromezng" do
+        %i.fa.fa-gitlab
+    %p.navbar-icons
+      = link_to "https://linkedin.com/in/jeromezng" do
+        %i.fa.fa-linkedin
+    - if user_signed_in?
+      %p.navbar-icons
+        = link_to destroy_user_session_path, method: :delete do
+          Logout

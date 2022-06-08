@@ -1,0 +1,79 @@
+@import "mixins.scss";
+
+.alert {
+  margin-bottom: 0;
+  border: none;
+}
+
+.alerts-notices {
+  font-size: 14px;
+  text-align: center;
+  h2 {
+    font-size: 14px;
+    text-align: center;
+  }
+  p {
+    font-size: 14px;
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+  }
+}
+
+.navbar-default {
+  margin: 0px;
+}
+
+.navbar.navbar-default {
+  background: $white;
+  border: none;
+  border-radius: 0px;
+  display: block;
+  padding: 0;
+}
+
+.desktop-nav {
+  padding: 0 15px;
+  .navbar-text {
+    margin: 15px 0px 12px 0px;
+    font-weight:  300;
+    font-size: 16px;
+    display: inline-block;
+    padding: 0;
+    a {
+      color: $font;
+      text-decoration: none;
+    }
+  }
+  .navbar-icons {
+    margin: 15px 0px 12px 20px;
+    font-weight:  300;
+    font-size: 16px;
+    display: inline-block;
+    float: right;
+    a {
+      color: $font;
+    }
+  }
+}
+
+.navbar-default.primary {
+  min-height: 50px;
+  border-bottom: 1px solid $lightborder;
+}
+
+//// mobile exception
+@media screen and (max-width: $breakpoint-max) {
+  .navbar-default.primary {
+    min-height: 40px;
+  }
+  .alerts-notices {
+    text-align: left;
+    h2 {
+      text-align: left;
+    }
+    p {
+      text-align: left;
+    }
+  }
+}
