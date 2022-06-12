@@ -1,7 +1,7 @@
 .container-narrow.sign-in
   .sign-in-title
     Log In
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f|
     = f.email_field :email, autofocus: true, required: true, placeholder: 'Email', autocomplete: "email", class: 'form-control sign-in-field'
     = f.password_field :password, autocomplete: "off", required: true, placeholder: 'Password', class: 'form-control sign-in-field'
     = f.submit "LOG IN", class: 'btn btn-primary sign-in-button'
