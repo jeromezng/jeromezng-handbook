@@ -1,7 +1,5 @@
-@import "mixins.scss";
-
 body {
-  background-color: $whitesmoke;
+  background-color: $gray-100;
 }
 
 .wrapper-wide {
@@ -74,7 +72,7 @@ body {
   max-width: 1000px;
   margin: 3rem auto;
   background: $white;
-  border: 1px solid $lightborder;
+  border: 1px solid $gray-300;
   border-radius: 5px;
   padding: 20px;
 }
@@ -83,7 +81,7 @@ body {
   max-width: 1000px;
   margin: 3rem auto;
   background: $white;
-  border: 1px solid $lightborder;
+  border: 1px solid $gray-300;
   border-radius: 5px;
   padding: 20px;
 }
@@ -123,7 +121,7 @@ body {
 
 .container-narrow {
   background: $white;
-  border: 1px solid $lightborder;
+  border: 1px solid $gray-300;
   border-radius: 5px;
   padding: 20px;
   max-width: 350px;
@@ -131,7 +129,7 @@ body {
   margin: 5rem auto;
 }
 
-@media screen and (max-width: $l-breakpoint-max) {
+@include media-breakpoint-down(lg) {
   .container-wide-no-padding {
     padding: 0;
     margin: 5px 15px 25px 15px;
