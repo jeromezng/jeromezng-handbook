@@ -125,7 +125,6 @@ body {
   border-radius: 5px;
   padding: 20px;
   max-width: 350px;
-  padding: 20px;
   margin: 5rem auto;
 }
 
@@ -149,6 +148,9 @@ body {
   .container-medium-no-background-no-height {
     padding: 0;
     margin: 15px;
+  }
+  .container-narrow {
+    max-width: 80%;
   }
   .wrapper-medium {
     width: 80%;
