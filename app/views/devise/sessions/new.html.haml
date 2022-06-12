@@ -5,5 +5,9 @@
     = f.email_field :email, autofocus: true, required: true, placeholder: 'Email', autocomplete: "email", class: 'form-control sign-in-field'
     = f.password_field :password, autocomplete: "off", required: true, placeholder: 'Password', class: 'form-control sign-in-field'
     = f.submit "LOG IN", class: 'btn btn-primary sign-in-button'
+  .sign-in-link
+    or
+    = link_to new_user_registration_path do
+      %strong Sign Up
   .sign-in-terms
     By signing up, logging in or continuing, I agree to JeromeZNg's <a href="/terms-of-use">Terms of Use</a> and <a href="/privacy-policy">Privacy Policy</a>.

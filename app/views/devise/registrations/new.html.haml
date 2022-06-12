@@ -1,21 +1,13 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.container-narrow.sign-in
+  .sign-in-title
+    Sign Up
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = f.email_field :email, autofocus: true, required: true, placeholder: 'Email', autocomplete: "email", class: 'form-control sign-in-field'
+    = f.password_field :password, autocomplete: "off", required: true, placeholder: 'Password (6 or more characters)', class: 'form-control sign-in-field'
+    = f.submit "SIGN UP", class: 'btn btn-primary sign-in-button'
+  .sign-in-link
+    or
+    = link_to new_user_session_path do
+      %strong Log In
+  .sign-in-terms
+    By signing up, logging in or continuing, I agree to JeromeZNg's <a href="/terms-of-use">Terms of Use</a> and <a href="/privacy-policy">Privacy Policy</a>.
