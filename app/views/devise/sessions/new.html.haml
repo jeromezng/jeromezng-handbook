@@ -8,6 +8,10 @@
   .sign-in-link
     or
     = link_to new_user_registration_path do
-      %strong Sign Up
+      %strong
+        Sign Up
+    %br
+    = link_to new_password_path(resource) do
+      Forgot your password?
   .sign-in-terms
     By signing up, logging in or continuing, I agree to JeromeZNg's <a href="/terms-of-use">Terms of Use</a> and <a href="/privacy-policy">Privacy Policy</a>.
