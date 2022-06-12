@@ -17,5 +17,5 @@
         %i.fa.fa-linkedin
     - if user_signed_in?
       %p.navbar-icons
-        = link_to destroy_user_session_path, method: :delete do
+        = link_to destroy_user_session_path, data: { turbo_method: :delete } do
           Logout

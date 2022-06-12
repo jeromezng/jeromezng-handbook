@@ -40,6 +40,10 @@ end
 group :development do
   # Development
   gem "web-console"
+
+  # Email
+  gem 'letter_opener', '~> 1.8', '>= 1.8.1'
+  gem 'letter_opener_web', '~> 2.0'
 end
 
 group :test do
