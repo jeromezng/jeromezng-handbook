@@ -1,10 +1,14 @@
-%h2 Resend unlock instructions
-= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .actions
-    = f.submit "Resend unlock instructions"
-= render "devise/shared/links"
+.container-narrow.sign-in
+  .sign-in-title
+    Resend Unlock Instructions
+  = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }, data: { turbo: false }) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    = f.email_field :email, autofocus: true, required: true, placeholder: 'Email', autocomplete: "email", class: 'form-control sign-in-field'
+    = f.submit "RESEND UNLOCK INSTRUCTIONS", class: 'btn btn-primary sign-in-button'
+  .sign-in-link
+    or
+    = link_to new_user_session_path do
+      %strong Log In
+    %br
+    = link_to new_user_registration_path do
+      Sign Up
