@@ -4,19 +4,27 @@ class PagesController < ApplicationController
   # GET /pages or /pages.json
   def index
     @pages = Page.all
+    @meta_title = "All Pages - JeromeZNg"
+    @meta_description = "Read all pages on JeromeZNg"
   end
 
   # GET /pages/1 or /pages/1.json
   def show
+    @meta_title = "#{@page.title} - JeromeZNg"
+    @meta_description = "Read about #{@page.title} on JeromeZNg"
   end
 
   # GET /pages/new
   def new
     @page = Page.new
+    @meta_title = "Create Page - JeromeZNg"
+    @meta_description = "Create a new page on JeromeZNg"
   end
 
   # GET /pages/1/edit
   def edit
+    @meta_title = "Edit #{@page.title} - JeromeZNg"
+    @meta_description = "Edit #{@page.title} on JeromeZNg"
   end
 
   # POST /pages or /pages.json
