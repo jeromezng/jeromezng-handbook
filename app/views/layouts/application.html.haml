@@ -1,9 +1,51 @@
 !!!
-%html
+%html{:lang => "en-US"}
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title JeromezngHandbook
-    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %title #{@meta_title}
+    %meta{:name => "title", :content => "#{@meta_title}"}
+    %meta{:name => "description", :content => "#{@meta_description}"}
+    %meta{:name => "keywords", :content => "#{@meta_keywords}"}
+    - if @robots.present?
+      %meta{:name => "robots", :content => @robots}
+    - else
+      %meta{:name => "robots", :content => "index, follow"}
+    - if @canonical.present?
+      %link{:rel => "canonical", :href => "#{@canonical}" }
+    - if @canonical_prev.present?
+      %link{:rel => "prev", :href => "#{@canonical_prev}" }
+    - if @canonical_next.present?
+      %link{:rel => "next", :href => "#{@canonical_next}" }
+    / Open Graph / Facebook
+    / %meta{:property => "fb:app_id", :content => ""}
+    %meta{:property => "og:site_name", :content => "JeromeZNg"}
+    %meta{:property => "og:type", :content => "website"}
+    %meta{:property => "og:url", :content => "https://jeromezng.com" + "#{request.original_fullpath}"}
+    %meta{:property => "og:title", :content => "#{@meta_title}"}
+    %meta{:property => "og:description", :content => "#{@meta_description}"}
+    %meta{:property => "og:image", :content => "#{asset_url('jeromezng-meta-image.jpg')}"}
+    / Twitter
+    %meta{:property => "twitter:site", :content => "@go_remoting"}
+    %meta{:property => "twitter:card", :content => "summary_large_image"}
+    %meta{:property => "twitter:url", :content => "https://jeromezng.com" + "#{request.original_fullpath}"}
+    %meta{:property => "twitter:title", :content => "#{@meta_title}"}
+    %meta{:property => "twitter:description", :content => "#{@meta_description}"}
+    %meta{:property => "twitter:image", :content => "#{asset_url('jeromezng-meta-image.jpg')}"}
+    / Other
+    %meta{:name => "msvalidate.01", :content => ""}
+    %meta{:name => "p:domain_verify", :content => ""}
+    %meta{:name => "google-site-verification", :content => ""}
+    %meta{:name => "application-name", :content => "JeromeZNg"}
+    %meta{:name => "msapplication-tooltip", :content => "JeromeZNg"}
+    %meta{:name => "msapplication-starturl", :content => "/"}
+    %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon", :sizes => "180x180"}/
+    %link{:href => "/favicon-32x32.png", :rel => "icon", :sizes => "32x32", :type => "image/png"}/
+    %link{:href => "/favicon-16x16.png", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
+    %link{:href => "/site.webmanifest", :rel => "manifest"}/
+    %link{:color => "#5bbad5", :href => "/safari-pinned-tab.svg", :rel => "mask-icon"}/
+    %meta{:content => "#2d89ef", :name => "msapplication-TileColor"}/
+    %meta{:content => "#ffffff", :name => "theme-color"}/
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"

@@ -6,7 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
       redirect_to root_path
     else
       @meta_title = "Sign Up - JeromeZNg"
-      @meta_description = "Sign up to JeromeZNg."
+      @meta_description = "Sign up for an account."
       build_resource({})
       respond_with self.resource
     end
@@ -14,11 +14,13 @@ class RegistrationsController < Devise::RegistrationsController
 
   def edit
     @meta_title = "Edit Settings - JeromeZNg"
+    @meta_description = "Edit your settings."
     super
   end
 
   def cancel
     @meta_title = "Cancel Account - JeromeZNg"
+    @meta_description = "Cancel your account."
     super
   end
 

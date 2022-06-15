@@ -7,6 +7,7 @@ class PasswordsController < Devise::PasswordsController
 
   def edit
     @meta_title = "Change Your Password - JeromeZNg"
+    @meta_description = "Change your password."
     super
   end
 end
